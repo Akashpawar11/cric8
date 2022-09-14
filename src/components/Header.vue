@@ -11,10 +11,55 @@
                 <b-navbar-nav>
                     <router-link class="routerLink justify-content-left" to='/'>Home</router-link>
                     <router-link class="routerLink justify-content-left" to='/asia-cup'>Asia Cup</router-link>
+                    <!-- <router-link class="routerLink justify-content-left" to='/icc-rankings'>Icc Rankings</router-link> -->
+                    <b-dropdown id="dropdown-grouped" text="ICC Rankings" class="m-2 justify-content-left">
+                        <b-dropdown-divider></b-dropdown-divider>
+                        <b-dropdown-group id="dropdown-group-1" header="ODI">
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/odi/batsmen">Top batsmen</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/odi/bowlers">Top bowlers</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/odi/allrounders">Top all-rounders</router-link>
+                            </b-dropdown-item-button>
+                        </b-dropdown-group>
+                        <b-dropdown-group id="dropdown-group-2" header="T20">
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/t20/batsmen">Top batsmen</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/t20/bowlers">Top bowlers</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/t20/allrounders">Top all-rounders</router-link>
+                            </b-dropdown-item-button>
+                        </b-dropdown-group>
+                        <b-dropdown-group id="dropdown-group-2" header="Test">
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/test/batsmen">Top batsmen</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/test/bowlers">Top bowlers</router-link>
+                            </b-dropdown-item-button>
+                            <b-dropdown-item-button>
+                                <router-link to="/icc-rankings/test/allrounders">Top all-rounders</router-link>
+                            </b-dropdown-item-button>
+                        </b-dropdown-group>
+                    </b-dropdown>
                     <!-- <router-link class="routerLink" to='/about-us'>Mat</router-link>
                     <router-link class="routerLink" to='/contact'></router-link> -->
                 </b-navbar-nav>
+                <!-- <b-nav-item-dropdown text="Icc Rankings" right>
+                    <b-dropdown-item class="button" @click="odi">EN</b-dropdown-item>
+                    <b-dropdown-item href="#">ES</b-dropdown-item>
+                    <b-dropdown-item href="#">RU</b-dropdown-item>
+                    <b-dropdown-item href="#">FA</b-dropdown-item>
+                </b-nav-item-dropdown> -->
             </b-collapse>
+
+
 
         </b-navbar>
     </div>
@@ -40,10 +85,11 @@ export default {
     border: 2px solid white;
     font-family: 'Montserrat';
     font-weight: 700;
-    color:#ffffff;
+    color: #ffffff;
 
 }
-.navbar-brand{
+
+.navbar-brand {
     color: #ffffff;
 }
 

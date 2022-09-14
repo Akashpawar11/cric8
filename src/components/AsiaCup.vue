@@ -1,6 +1,20 @@
 <template>
     <div>
         <HeaderNav />
+
+        <div>
+            <div class="lds-roller" v-if="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
         <div class="container-fluid p-0">
 
             <div class="row">
@@ -35,10 +49,12 @@ export default {
         return {
             seriesName: '',
             score: '',
-            data: []
+            data: [],
+            loading : false
         }
     },
     async mounted() {
+        this.loading = true
         let results = await axios.get(
             'https://unofficial-cricbuzz.p.rapidapi.com/matches/list', {
             headers: {
@@ -51,6 +67,7 @@ export default {
         this.score = results.data.typeMatches[0].seriesAdWrapper[0].seriesMatches.matches[0].matchScore.team1Score.inngs1
         this.seriesName = results.data.typeMatches[0].seriesAdWrapper[0].seriesMatches.seriesName
         this.data = results.data.typeMatches[0].seriesAdWrapper[0].seriesMatches.matches
+        this.loading = false
     }
 }
 </script>

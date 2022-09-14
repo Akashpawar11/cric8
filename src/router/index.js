@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomePage from '../components/Home.vue'
 import AsiaCup from '../components/AsiaCup.vue'
+import IccRankings from '../components/IccRankings.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/asia-cup',
     name: 'AsiaCup',
     component: AsiaCup
+  },
+  {
+    path: '/icc-rankings/:format/:category',
+    name: 'IccRankings',
+    component: IccRankings
   }
 ]
 
