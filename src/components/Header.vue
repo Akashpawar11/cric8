@@ -10,6 +10,7 @@
             <b-collapse class="collapseNav collapse show" id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <router-link class="routerLink justify-content-left" to='/'>Home</router-link>
+                    <router-link class="routerLink justify-content-left" to='/asia-cup'>Asia Cup</router-link>
                     <!-- <router-link class="routerLink" to='/about-us'>Mat</router-link>
                     <router-link class="routerLink" to='/contact'></router-link> -->
                 </b-navbar-nav>

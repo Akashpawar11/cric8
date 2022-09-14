@@ -1,6 +1,25 @@
 <template>
     <div>
         <HeaderNav />
+        <div class="container-fluid p-0">
+
+            <div class="row">
+                <h2 style="padding: 25px 0 5px 0;">{{this.seriesName}}</h2>
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 matchCard" v-for="match in data" :key="match.id">
+                    <div class="matchData mx-auto">
+
+                        <h5 class="matchDesc">{{match.matchInfo.matchDesc}}, {{match.matchInfo.matchFormat}}</h5>
+                        <div class="matchScore">
+
+                            <h4><b>{{match.matchInfo.team1.teamSName}}</b> {{match.matchScore.team1Score.inngs1.runs}} - {{match.matchScore.team1Score.inngs1.wickets}} | {{match.matchScore.team1Score.inngs1.overs}} Overs</h4>
+                            <h4><b>{{match.matchInfo.team2.teamSName}}</b> {{match.matchScore.team2Score.inngs1.runs}} - {{match.matchScore.team2Score.inngs1.wickets}} | {{match.matchScore.team2Score.inngs1.overs}} Overs</h4>
+
+                        </div>
+                        <h5 class="matchStatus">{{match.matchInfo.status}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -8,7 +27,7 @@
 import axios from 'axios'
 import HeaderNav from '../components/Header.vue'
 export default {
-    name: 'HomePage',
+    name: 'AsiaCup',
     components: {
         HeaderNav
     },
@@ -37,19 +56,19 @@ export default {
 </script>
 
 <style>
-
-
 .row {
     margin: 0;
 }
-.matchData{
+
+.matchData {
     width: 100%;
     height: 14rem;
     border: 2px solid black;
     border-radius: 16px;
     margin: 15px 0;
 }
-.matchDesc{
+
+.matchDesc {
     background-color: #e7e7e7;
     border-radius: 15px 15px 0px 0px;
     padding: 8px;
@@ -61,8 +80,10 @@ export default {
     align-items: center;
     justify-content: center;
 }
-.matchScore{
+
+.matchScore {
     padding: 10px 0 6px 0;
+    border-top: 2px solid;
     border-top: 2px solid;
     border-bottom: 2px solid;
     display: flex;
@@ -71,12 +92,14 @@ export default {
     justify-content: center;
     background-color: burlywood;
 }
-.matchStatus{
+
+.matchStatus {
     font-size: 1.2rem;
     padding: 19.5px;
     display: flex;
     align-content: center;
     justify-content: center;
+    /* margin: 0; */
     background-color: #9bd9e5;
     border-radius: 0 0 16px 16px;
 }

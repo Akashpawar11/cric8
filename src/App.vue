@@ -23,6 +23,22 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #d4ff00;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom,
+      #fffb00,
+      #FF3474);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #424242;
 }
 </style>
